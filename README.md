@@ -1,6 +1,6 @@
 # Vanilla Slider
 
-> A simple and plain vanilla JavaScript slider (images only).
+> A plain and simple vanilla JavaScript slider (images only).
 
 ## Usage
 
