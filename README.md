@@ -4,6 +4,12 @@
 
 ## Usage
 
+0. Install it from Bower
+
+   ```sh
+   $ bower install vanilla-slider
+   ```
+
 1. Create a container for the slider:
 
 	```html
@@ -13,15 +19,15 @@
 2. Include Vanilla Slider's code:
 
 	```html
-	<script src="src/vanilla-slider.min.js"></script>
+	<script src="[bower_components/]dist/vanilla-slider.min.js"></script>
 	```
 
 3. Call the plugin:
 
 	```javascript
 	vs.set({
-		containerId: <string: id for container element (containing imgs tags); default: 'vs-container'>,
-		timeInterval: <integer: interval between each image, in milliseconds; default: 4000>
+		containerId: 'vs-container' /* string: id for container element (containing imgs tags); default: 'vs-container' */,
+		timeInterval: 4000 /* integer: interval between each image, in milliseconds; default: 4000 */
 	});
 	```
 
