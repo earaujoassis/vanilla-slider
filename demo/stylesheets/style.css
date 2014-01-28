@@ -29,5 +29,7 @@ h1,p{ margin:0; }
 #ntstest{ position:relative; margin:0 auto; padding-bottom:15px; max-width:1024px; width:90%; height:300px; border-bottom:1px solid #9a9a9a; text-align:center; overflow:hidden; }
 #ntstest>img{ display:none; }
 #ntstest>img:first-child{ display:block; }
-
-
+#ntstest .caption{ position:absolute; bottom:35px; left:20px; padding:8px 12px; background:rgba(255, 255, 255, 0.75); text-align:left; }
+@media (min-width:900px) {
+#ntstest .caption{ width:320px; min-height:54px; }
+}

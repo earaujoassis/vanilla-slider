@@ -1,5 +1,5 @@
 /*
- *  Vanilla Slider - v0.1.5
+ *  Vanilla Slider - v0.2.0
  *  A plain and simple vanilla JavaScript slider.
  *  http://earaujoassis.github.io/vanilla-slider/
  *
@@ -19,8 +19,8 @@
     VanillaSlider.prototype.domReady = false;
 
     VanillaSlider.prototype.set = function (customOptions) {
-        var self = this,
-            options = {},
+        var options = {},
+            self = this,
             sliderContainer,
             sliderImages,
             currentImage,
@@ -33,6 +33,8 @@
         options.timeInterval = customOptions.timeInterval || self.timeInterval;
         options.containerId = customOptions.containerId || self.containerId;
         options.startAt = customOptions.startAt || self.startAt;
+        options.before = customOptions.before || null;
+        options.after = customOptions.after || null;
 
         if (!self.domReady) {
             self.readySet = function () { self.set(options); };
@@ -52,6 +54,11 @@
                 if ((sliderImages.length - 1) < setToImage || setToImage < 0) {
                     return;
                 }
+
+                if (!!options.before) {
+                    options.before(sliderImages[currentImage]);
+                }
+
                 /*jshint -W081 */
                 for (var i = 0, max = sliderImages.length; i < max; i += 1) {
                     if (i === setToImage) {
@@ -60,12 +67,18 @@
                     sliderImages[i].style.display = "none";
                 }
                 /*jshint +W081 */
+
                 sliderImages[setToImage].style.display = "block";
+                currentImage = setToImage;
+
+                if (!!options.after) {
+                    options.after(sliderImages[currentImage]);
+                }
             };
             resetImage(currentImage);
             self.intervalElement = setInterval(function () {
-                currentImage = currentImage + 1 >= sliderImages.length ? 0 : currentImage + 1;
-                resetImage(currentImage);
+                var nextImage = currentImage + 1 >= sliderImages.length ? 0 : currentImage + 1;
+                resetImage(nextImage);
             }, options.timeInterval);
         }
         else {
@@ -76,7 +89,7 @@
     VanillaSlider.prototype.domIsReady = function () {
         this.domReady = true;
         if (this.readySet) {
-            this.readySet();
+            this.readySet(); /* GO! */
         }
     };
 

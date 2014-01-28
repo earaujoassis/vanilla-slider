@@ -27,7 +27,9 @@
 	```javascript
 	vs.set({
 		containerId: 'vs-container' /* string: id for container element (containing imgs tags); default: 'vs-container' */,
-		timeInterval: 4000 /* integer: interval between each image, in milliseconds; default: 4000 */
+		timeInterval: 4000 /* integer: interval between each image, in milliseconds; default: 4000 */,
+		before: function (element) { } /* function: provides the current element right before it changes the status */,
+		after: function (element) { } /* function: provides the current element right after it changes the status */,
 	});
 	```
 
