@@ -1,5 +1,5 @@
 /*
- *  Vanilla Slider - v0.1.4
+ *  Vanilla Slider - v0.1.5
  *  A plain and simple vanilla JavaScript slider.
  *  http://earaujoassis.github.io/vanilla-slider/
  *
@@ -9,17 +9,18 @@
 (function (w, d) {
     "use strict";
     var VanillaSlider = function () {
-        this.timeInterval = 4000;
-        this.containerId = "vs-container";
-        this.startAt = 0;
-        this.domReady = false;
         this.readySet;
         this.intervalElement;
     };
 
+    VanillaSlider.prototype.timeInterval = 4000;
+    VanillaSlider.prototype.containerId = "vs-container";
+    VanillaSlider.prototype.startAt = 0;
+    VanillaSlider.prototype.domReady = false;
+
     VanillaSlider.prototype.set = function (customOptions) {
-        var options = {},
-            self = this,
+        var self = this,
+            options = {},
             sliderContainer,
             sliderImages,
             currentImage,
@@ -34,7 +35,7 @@
         options.startAt = customOptions.startAt || self.startAt;
 
         if (!self.domReady) {
-            self.readySet = function () { self.set (options); };
+            self.readySet = function () { self.set(options); };
             return;
         }
 
@@ -48,16 +49,17 @@
         if (!!sliderImages.length) {
             currentImage = options.startAt;
             resetImage = function (setToImage) {
-                var i, max;
                 if ((sliderImages.length - 1) < setToImage || setToImage < 0) {
                     return;
                 }
-                for (i = 0, max = sliderImages.length; i < max; i += 1) {
+                /*jshint -W081 */
+                for (var i = 0, max = sliderImages.length; i < max; i += 1) {
                     if (i === setToImage) {
                         continue;
                     }
                     sliderImages[i].style.display = "none";
                 }
+                /*jshint +W081 */
                 sliderImages[setToImage].style.display = "block";
             };
             resetImage(currentImage);
@@ -71,7 +73,7 @@
         }
     };
 
-    VanillaSlider.prototype.domIsReady = function() {
+    VanillaSlider.prototype.domIsReady = function () {
         this.domReady = true;
         if (this.readySet) {
             this.readySet();
