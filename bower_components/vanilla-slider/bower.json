@@ -1,0 +1,16 @@
+{
+  "name": "vanilla-slider",
+  "version": "0.2.3",
+  "homepage": "https://github.com/earaujoassis/vanilla-slider",
+  "authors": [
+    "Ewerton Araujo <hey@ewerton-araujo.com>"
+  ],
+  "description": "A simple and plain vanilla JavaScript slider",
+  "main": "dist/vanilla-slider.js",
+  "keywords": [
+    "vanilla",
+    "slider",
+    "slideshow"
+  ],
+  "license": "MIT"
+}

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="bower_components/vanilla-slider/demo/stylesheets/style.css">
     <title>Vanilla Slider</title>
   </head>
   <body>
@@ -13,16 +13,25 @@
       <p>A plain and simple vanilla JavaScript slider</p>
     </div>
     <div id="ntstest">
-      <img src="images/rio.jpg" alt="Rio de Janeiro Landscape by José Fernandez Jr. (@jfjwak) on Flickr" title="Rio de Janeiro Landscape by José Fernandez Jr. (@jfjwak) on Flickr">
-      <img src="images/new-york-city.jpg" alt="New York City, Manhattan Bridge, 1909-12 by Vincent Desjardins (@endymion120) on Flickr" title="New York City, Manhattan Bridge, 1909-12 by Vincent Desjardins (@endymion120) on Flickr">
-      <img src="images/paris.jpg" alt="Paris by Moyan Brenn (@aigle_dore) on Flickr" title="Paris by Moyan Brenn (@aigle_dore) on Flickr">
-      <img src="images/london.jpg" alt="London by Miguel Mendez (@flynn_nrg) on Flickr" title="London by Miguel Mendez (@flynn_nrg) on Flickr">
-      <img src="images/tokyo.jpg" alt="Tokyo Tower by Sebastien Batardy (@batardy_sebastien) on Flickr" title="Tokyo Tower by Sebastien Batardy (@batardy_sebastien) on Flickr">
+      <img src="bower_components/vanilla-slider/demo/images/rio.jpg" alt="Rio de Janeiro Landscape by José Fernandez Jr. (@jfjwak) on Flickr" title="Rio de Janeiro Landscape by José Fernandez Jr. (@jfjwak) on Flickr">
+      <img src="bower_components/vanilla-slider/demo/images/new-york-city.jpg" alt="New York City, Manhattan Bridge, 1909-12 by Vincent Desjardins (@endymion120) on Flickr" title="New York City, Manhattan Bridge, 1909-12 by Vincent Desjardins (@endymion120) on Flickr">
+      <img src="bower_components/vanilla-slider/demo/images/paris.jpg" alt="Paris by Moyan Brenn (@aigle_dore) on Flickr" title="Paris by Moyan Brenn (@aigle_dore) on Flickr">
+      <img src="bower_components/vanilla-slider/demo/images/london.jpg" alt="London by Miguel Mendez (@flynn_nrg) on Flickr" title="London by Miguel Mendez (@flynn_nrg) on Flickr">
+      <img src="bower_components/vanilla-slider/demo/images/tokyo.jpg" alt="Tokyo Tower by Sebastien Batardy (@batardy_sebastien) on Flickr" title="Tokyo Tower by Sebastien Batardy (@batardy_sebastien) on Flickr">
+      <div class="caption" id="caption-placeholder"></div>
     </div>
     <div class="copyright">
       <p>Made by <a href="http://ewerton-araujo.com">Ewerton Araújo</a></p>
     </div>
-    <script src="javascript/vanilla-slider.min.js"></script>
-    <script>vs.set( { containerId: 'ntstest' } );</script>
+    <script src="bower_components/vanilla-slider/dist/vanilla-slider.min.js"></script>
+    <script>vs.set({
+      containerId: 'ntstest',
+      after: function (element) {
+        var title = element.getAttribute("title");
+        document
+          .getElementById("caption-placeholder")
+          .innerHTML = title;
+      }
+    });</script>
   </body>
 </html>
