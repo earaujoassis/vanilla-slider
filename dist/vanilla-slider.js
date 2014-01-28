@@ -1,5 +1,5 @@
 /*
- *  Vanilla Slider - v0.2.0
+ *  Vanilla Slider - v0.2.1
  *  A plain and simple vanilla JavaScript slider.
  *  http://earaujoassis.github.io/vanilla-slider/
  *
