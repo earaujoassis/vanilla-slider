@@ -85,6 +85,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-lintspaces');
 
     grunt.registerTask('default', ['lintspaces', 'jshint', 'concat', 'uglify']);
-    grunt.registerTask('release', ['bump-only:patch', 'default', 'bump-commit']);
+    grunt.registerTask('release', ['bump-only:minor', 'default', 'bump-commit']);
 
 };

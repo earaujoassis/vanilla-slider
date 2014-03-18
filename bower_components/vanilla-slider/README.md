@@ -1,6 +1,6 @@
 # Vanilla Slider
 
-> A plain and simple vanilla JavaScript slider (images only).
+> A plain and simple vanilla JavaScript slider.
 
 ## Usage
 
@@ -13,7 +13,7 @@
 1. Create a container for the slider:
 
 	```html
-	<div id="vs-container"> <!-- Put your images here --> </div>
+	<div id="vs-container"> <!-- Put your elements here --> </div>
 	```
 
 2. Include Vanilla Slider's code:
@@ -26,8 +26,9 @@
 
 	```javascript
 	vs.set({
-		containerId: 'vs-container' /* string: id for container element (containing imgs tags); default: 'vs-container' */,
-		timeInterval: 4000 /* integer: interval between each image, in milliseconds; default: 4000 */,
+		containerId: 'vs-container' /* string: id for the container element; default: 'vs-container' */,
+		iterable '.images' /* string: iterable elements to be visible/hidden; default: 'img' */,
+		timeInterval: 4000 /* integer: interval between each element, in milliseconds; default: 4000 */,
 		before: function (element) { } /* function: provides the current element right before it changes the status */,
 		after: function (element) { } /* function: provides the current element right after it changes the status */,
 	});

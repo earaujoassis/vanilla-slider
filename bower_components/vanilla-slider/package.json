@@ -4,7 +4,7 @@
     "description": "A plain and simple vanilla JavaScript slider.",
     "author": "Ewerton Araujo",
     "homepage": "http://earaujoassis.github.io/vanilla-slider/",
-    "version": "0.2.3",
+    "version": "0.3.0",
     "repository": {
         "type": "git",
         "url": "https://github.com/earaujoassis/vanilla-slider.git"

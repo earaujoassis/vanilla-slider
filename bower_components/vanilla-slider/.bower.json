@@ -1,6 +1,6 @@
 {
   "name": "vanilla-slider",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "homepage": "https://github.com/earaujoassis/vanilla-slider",
   "authors": [
     "Ewerton Araujo <hey@ewerton-araujo.com>"
@@ -13,14 +13,14 @@
     "slideshow"
   ],
   "license": "MIT",
-  "_release": "0.2.3",
+  "_release": "0.3.0",
   "_resolution": {
     "type": "version",
-    "tag": "0.2.3",
-    "commit": "2cb590f874a254e2df05bba0211d0e2c8419b060"
+    "tag": "0.3.0",
+    "commit": "04b0a5315c211810f5ae606b28c50ae490445792"
   },
   "_source": "git://github.com/earaujoassis/vanilla-slider.git",
-  "_target": "~0.2.3",
+  "_target": "~0.3.0",
   "_originalSource": "vanilla-slider",
   "_direct": true
 }

@@ -1,5 +1,12 @@
 (function (w, d) {
     "use strict";
+
+    if (typeof String.prototype.startsWith !== "function") {
+        String.prototype.startsWith = function (str) {
+            return this.slice(0, str.length) === str;
+        };
+    }
+
     var VanillaSlider = function () {
         this.readySet;
         this.intervalElement;
@@ -9,12 +16,13 @@
     VanillaSlider.prototype.containerId = "vs-container";
     VanillaSlider.prototype.startAt = 0;
     VanillaSlider.prototype.domReady = false;
+    VanillaSlider.prototype.iterable = "img";
 
     VanillaSlider.prototype.set = function (customOptions) {
         var options = {},
             self = this,
             sliderContainer,
-            sliderImages,
+            sliderElements,
             currentImage,
             resetImage;
 
@@ -27,6 +35,7 @@
         options.startAt = customOptions.startAt || self.startAt;
         options.before = customOptions.before || null;
         options.after = customOptions.after || null;
+        options.iterable = customOptions.iterable || self.iterable;
 
         if (!self.domReady) {
             self.readySet = function () { self.set(options); };
@@ -39,37 +48,41 @@
         }
 
         sliderContainer = d.getElementById(options.containerId);
-        sliderImages = sliderContainer.getElementsByTagName("img");
-        if (!!sliderImages.length) {
+        if (options.iterable.startsWith(".")) {
+            sliderElements = sliderContainer.getElementsByClassName(options.iterable.replace(".", ""));
+        } else {
+            sliderElements = sliderContainer.getElementsByTagName(options.iterable);
+        }
+        if (!!sliderElements.length) {
             currentImage = options.startAt;
             resetImage = function (setToImage) {
-                if ((sliderImages.length - 1) < setToImage || setToImage < 0) {
+                if ((sliderElements.length - 1) < setToImage || setToImage < 0) {
                     return;
                 }
 
                 if (!!options.before) {
-                    options.before(sliderImages[currentImage]);
+                    options.before(sliderElements[currentImage]);
                 }
 
                 /*jshint -W081 */
-                for (var i = 0, max = sliderImages.length; i < max; i += 1) {
+                for (var i = 0, max = sliderElements.length; i < max; i += 1) {
                     if (i === setToImage) {
                         continue;
                     }
-                    sliderImages[i].style.display = "none";
+                    sliderElements[i].style.display = "none";
                 }
                 /*jshint +W081 */
 
-                sliderImages[setToImage].style.display = "block";
+                sliderElements[setToImage].style.display = "block";
                 currentImage = setToImage;
 
                 if (!!options.after) {
-                    options.after(sliderImages[currentImage]);
+                    options.after(sliderElements[currentImage]);
                 }
             };
             resetImage(currentImage);
             self.intervalElement = setInterval(function () {
-                var nextImage = currentImage + 1 >= sliderImages.length ? 0 : currentImage + 1;
+                var nextImage = currentImage + 1 >= sliderElements.length ? 0 : currentImage + 1;
                 resetImage(nextImage);
             }, options.timeInterval);
         }
