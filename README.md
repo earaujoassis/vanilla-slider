@@ -40,4 +40,4 @@ And then you're set.
 
 ## License 
 
-[MIT License](http://ewerton-araujo.mit-license.org/) &copy; Ewerton Assis
+[MIT License](http://earaujoassis.mit-license.org/) &copy; Ewerton Assis
