@@ -2,17 +2,17 @@
 
 > A plain and simple vanilla JavaScript slider.
 
-This project was developed as a technical test for a selection process. **It is not maintained anymore**.
+This project was created as a technical test for a selection process. **It is not maintained anymore**.
 
 ## Usage
 
-1. Install it from Bower
+Install it from Bower
 
 ```sh
 $ bower install vanilla-slider
 ```
 
-1. Create a container for the slider:
+Create a container for the slider:
 
 ```html
 <div id="my-container">
@@ -20,13 +20,13 @@ $ bower install vanilla-slider
 </div>
 ```
 
-2. Include Vanilla Slider's code:
+Include Vanilla Slider's code:
 
 ```html
 <script src="[bower_components]/vanilla-slider/dist/vanilla-slider.min.js"></script>
 ```
 
-3. Call the plugin:
+Call the plugin:
 
 ```javascript
 VanillaSlider.set({
@@ -57,7 +57,7 @@ VanillaSlider.set({
 });
 ```
 
-4. Proper styles should be given; see demo for an example.
+Proper styles should be given; see the project website for an example.
 
 And then you're set.
 
