@@ -1,0 +1,31 @@
+{
+  "name": "vanilla-slider/site",
+  "version": "0.4.2",
+  "homepage": "https://github.com/earaujoassis/vanilla-slider",
+  "authors": [
+    "Ewerton Assis <hello@dearaujoassis.com>"
+  ],
+  "description": "A plain and simple vanilla JavaScript slider.",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "vanilla",
+    "slider",
+    "slideshow"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "vanilla-slider": "~0.4.2",
+    "octicons": "~3.1.0",
+    "foundation": "~5.5.3"
+  }
+}

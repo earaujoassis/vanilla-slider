@@ -1,0 +1,105 @@
+@font-face {
+    font-family:  'FiraSans';
+    src:  url('../fonts/firasansot-light-webfont.eot');
+    src:  url('../fonts/firasansot-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/firasansot-light-webfont.woff') format('woff'),
+         url('../fonts/firasansot-light-webfont.ttf') format('truetype'),
+         url('../fonts/firasansot-light-webfont.svg#fira_sans_otlight') format('svg');
+    font-weight:  300;
+    font-style:  normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    font-family: 'FiraSans', sans-serif;
+    font-weight: 300;
+}
+
+a {
+    color: #9a9a9a;
+    text-decoration: none;
+}
+
+h1, h2 {
+    color: #9a9a9a;
+    line-height: 2;
+    font-family: inherit;
+    font-weight: 300;
+}
+
+h1, p {
+    margin: 0;
+}
+
+p ~ p {
+    margin-top: 15px;
+}
+
+
+@keyframes fade-in {
+    0% { opacity: 0; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.fade-in {
+    animation-name: fade-in;
+    animation-duration: 0.65s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-play-state: running;
+}
+
+#container {
+    position: relative;
+    height: 250px;
+}
+
+#container .iterable {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    color: #fff;
+    font-family: 'Forum', serif;
+    font-weight: normal;
+    font-size: 8rem;
+    line-height: 270px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#first {
+    background: #e8d66e;
+}
+
+#second {
+    background: #44ff94;
+}
+
+#third {
+    background: #5dcbff;
+}
+
+.button.github {
+    margin: 0;
+    padding: 0.5rem 1.4rem;
+    border-radius: 4px;
+    background: #dbdbdb;
+    color: #777;
+    box-shadow: none;
+}
+
+.header, .copyright {
+    padding: 25px 0;
+    text-align: center;
+}
+
+.copyright {
+    color: #b6b6b6;
+}
+
+.copyright a {
+    color: #777;
+}
