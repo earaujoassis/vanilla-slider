@@ -1,2 +1,6 @@
-node_modules/
-bower_components/
+node_modules
+site/components
+site/.git/
+site/.git
+components
+.DS_Store

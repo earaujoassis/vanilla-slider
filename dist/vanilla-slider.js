@@ -1,9 +1,9 @@
 /*
- *  Vanilla Slider - v0.2.5
+ *  Vanilla Slider - v0.4.2
  *  A plain and simple vanilla JavaScript slider.
- *  http://earaujoassis.github.io/vanilla-slider/
+ *  https://earaujoassis.github.io/vanilla-slider/
  *
- *  Copyright (c) 2014 Ewerton Assis <hey@ewerton-araujo.com>
+ *  Copyright (c) 2015 Ewerton Assis <hello@dearaujoassis.com>
  *  MIT License
  */
 (function (w, d) {
@@ -95,7 +95,7 @@
             }, options.timeInterval);
         }
         else {
-            console.log("Vanilla-slider: Warning: There are no images to slide.");
+            console.error("Vanilla-slider: Warning: There are no images to slide.");
         }
     };
 
@@ -106,18 +106,19 @@
         }
     };
 
-    w.vs = new VanillaSlider();
+    w.VanillaSlider = new VanillaSlider();
+    w.vs = w.VanillaSlider;
 
     if (d.addEventListener) {
         d.addEventListener("DOMContentLoaded", function evnt() {
             d.removeEventListener("DOMContentLoaded", evnt, false);
-            w.vs.domIsReady();
+            w.VanillaSlider.domIsReady();
         }, false);
     } else if (d.attachEvent) {
         d.attachEvent("onreadystatechange", function evnt() {
             if (d.readyState === "complete") {
                 d.detachEvent("onreadystatechange", evnt);
-                w.vs.domIsReady();
+                w.VanillaSlider.domIsReady();
             }
         });
     }

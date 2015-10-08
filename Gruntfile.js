@@ -10,23 +10,9 @@ module.exports = function(grunt) {
                 ' *  <%= pkg.description %>\n' +
                 ' *  <%= pkg.homepage %>\n' +
                 ' *\n' +
-                ' *  Copyright (c) <%= grunt.template.today("yyyy") %> Ewerton Assis <hey@ewerton-araujo.com>\n' +
+                ' *  Copyright (c) <%= grunt.template.today("yyyy") %> Ewerton Assis <hello@dearaujoassis.com>\n' +
                 ' *  MIT License\n' +
                 ' */\n'
-        },
-
-        bump: {
-            options: {
-                files: ['package.json', 'bower.json'],
-                commit: true,
-                commitMessage: 'Release v%VERSION%',
-                commitFiles: ['package.json', 'bower.json'],
-                createTag: true,
-                tagName: '%VERSION%',
-                tagMessage: '',
-                push: true,
-                pushTo: 'origin'
-            }
         },
 
         concat: {
@@ -73,18 +59,28 @@ module.exports = function(grunt) {
         watch: {
             files: ['**/*'],
             tasks: ['jshint', 'concat', 'uglify'],
+        },
+
+        connect: {
+            server: {
+                options: {
+                    port: 3000,
+                    base: 'site',
+                    keepalive: true
+                }
+            }
         }
 
     });
 
-    grunt.loadNpmTasks('grunt-bump');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-lintspaces');
+    grunt.loadNpmTasks('grunt-contrib-connect');
 
     grunt.registerTask('default', ['lintspaces', 'jshint', 'concat', 'uglify']);
-    grunt.registerTask('release', ['bump-only:minor', 'default', 'bump-commit']);
+    grunt.registerTask('release', ['default']);
 
 };
