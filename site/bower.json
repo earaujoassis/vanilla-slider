@@ -1,9 +1,9 @@
 {
   "name": "vanilla-slider/site",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "homepage": "https://github.com/earaujoassis/vanilla-slider",
   "authors": [
-    "Ewerton Assis <hello@dearaujoassis.com>"
+    "Ewerton Assis <earaujoassis@gmail.com>"
   ],
   "description": "A plain and simple vanilla JavaScript slider.",
   "main": "index.html",
@@ -24,7 +24,7 @@
     "tests"
   ],
   "dependencies": {
-    "vanilla-slider": "~0.4.2",
+    "vanilla-slider": "~0.4.3",
     "octicons": "~3.1.0",
     "foundation": "~5.5.3"
   }
