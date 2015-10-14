@@ -1,9 +1,9 @@
 /*
- *  Vanilla Slider - v0.4.2
+ *  Vanilla Slider - v0.4.3
  *  A plain and simple vanilla JavaScript slider.
  *  https://earaujoassis.github.io/vanilla-slider/
  *
- *  Copyright (c) 2015 Ewerton Assis <hello@dearaujoassis.com>
+ *  Copyright (c) 2015 Ewerton Assis <earaujoassis@gmail.com>
  *  MIT License
  */
 (function (w, d) {

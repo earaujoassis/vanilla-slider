@@ -1,12 +1,12 @@
 {
   "name": "vanilla-slider",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "homepage": "https://github.com/earaujoassis/vanilla-slider",
   "main": [
     "dist/vanilla-slider.min.js"
   ],
   "authors": [
-    "Ewerton Assis <hello@earaujoassis.com>"
+    "Ewerton Assis <earaujoassis@gmail.com>"
   ],
   "description": "A simple and plain vanilla JavaScript slider",
   "keywords": [
@@ -23,13 +23,13 @@
     "tests",
     "site"
   ],
-  "_release": "0.4.2",
+  "_release": "0.4.3",
   "_resolution": {
     "type": "version",
-    "tag": "0.4.2",
-    "commit": "6e692a925ea1b8bad09ee3bfd24acbc810f29252"
+    "tag": "0.4.3",
+    "commit": "3548a0d3c3cc67945676f7c272a7218180b5a5ab"
   },
   "_source": "git://github.com/earaujoassis/vanilla-slider.git",
-  "_target": "~0.4.2",
+  "_target": "~0.4.3",
   "_originalSource": "vanilla-slider"
 }
